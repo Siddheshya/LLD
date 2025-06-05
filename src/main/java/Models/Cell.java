@@ -2,14 +2,32 @@ package Models;
 
 import Models.HelperModel.Pair;
 
+import java.util.Optional;
+
 public class Cell {
 
     private Pair pair;
 
     private Color color;
 
-    public Cell(Pair pair, Color color) {
+    private Optional<Piece> piece;
+
+    public Cell(Pair pair) {
         this.pair = pair;
-        this.color = color;
+        this.piece = Optional.empty();
     }
+
+    public boolean hasPiece(){
+        return piece.isPresent();
+    }
+
+    public void setPiece(Piece piece){
+        this.piece = Optional.of(piece);
+    }
+
+    public String getPieceSymbol(){
+        return piece.get().getPieceSymbol();
+    }
+
+
 }

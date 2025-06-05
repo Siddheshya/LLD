@@ -1,5 +1,9 @@
 package Models;
 
+import Strategy.MovingStrategy;
+
+import java.util.ArrayList;
+
 public abstract class ChessPiece {
 
     private Cell currentCell;
@@ -9,6 +13,8 @@ public abstract class ChessPiece {
     private final Name name;
 
     private final Color color;
+
+    private ArrayList<MovingStrategy> ways;
 
     public ChessPiece(Color color,Cell currentCell,Name name) {
         this.color = color;
@@ -36,6 +42,15 @@ public abstract class ChessPiece {
 
     private void setCurrentCell(Cell currentCell) {
         this.currentCell = currentCell;
+    }
+
+    public void setWays(ArrayList<MovingStrategy> ways) {
+        this.ways = ways;
+    }
+
+    public String getPieceSymbol() {
+        String colorPrefix = this.color == Color.White?"W":"B";
+        return colorPrefix + this.name.toString();
     }
 
 }

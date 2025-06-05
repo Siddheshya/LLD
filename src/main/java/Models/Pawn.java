@@ -10,4 +10,9 @@ public class Pawn extends ChessPiece implements Piece{
     public boolean canMove(Cell start, Cell end) {
         return false;
     }
+
+    @Override
+    public boolean makeAMove(Cell start, Cell end) {
+        return false;
+    }
 }

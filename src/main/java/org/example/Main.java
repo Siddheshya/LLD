@@ -1,7 +1,16 @@
 package org.example;
 
+import Models.ChessBoard;
+import Models.Game.BoardGame;
+import Models.Game.ChessGame;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+
+        ChessBoard board = new ChessBoard();
+        BoardGame game = new ChessGame(board);
+//        game.initBoard(board);
+        game.displayBoard();
+
     }
 }
