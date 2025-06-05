@@ -2,8 +2,8 @@ package Models;
 
 public class Pawn extends ChessPiece implements Piece{
 
-    public Pawn(Color color, Cell currentCell, Name name) {
-        super(color, currentCell, name);
+    public Pawn(Color color,Name name) {
+        super(color, name);
     }
 
     @Override
@@ -15,4 +15,10 @@ public class Pawn extends ChessPiece implements Piece{
     public boolean makeAMove(Cell start, Cell end) {
         return false;
     }
+
+    @Override
+    public String getPieceSymbol() {
+        return super.getPieceSymbol();
+    }
+
 }

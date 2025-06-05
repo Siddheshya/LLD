@@ -10,6 +10,7 @@ public class Main {
         ChessBoard board = new ChessBoard();
         BoardGame game = new ChessGame(board);
 //        game.initBoard(board);
+        game.initBoard();
         game.displayBoard();
 
     }

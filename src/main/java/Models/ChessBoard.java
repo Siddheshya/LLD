@@ -32,10 +32,20 @@ public class ChessBoard implements Board{
                    System.out.print(board.get(i).get(j).getPieceSymbol()+"|");
                }
                else{
-                   System.out.print("____|");
+                   System.out.print("___|");
                }
             }
             System.out.println();
         }
     }
+
+    public List<List<Cell>> getBoard() {
+        return board;
+    }
+
+    public void setPiece(int row,int column, Piece piece){
+        board.get(row).get(column).setPiece(piece);
+    }
+
+
 }

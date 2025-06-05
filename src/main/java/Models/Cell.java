@@ -29,5 +29,11 @@ public class Cell {
         return piece.get().getPieceSymbol();
     }
 
+    public Pair getPair() {
+        return pair;
+    }
+
+
+
 
 }

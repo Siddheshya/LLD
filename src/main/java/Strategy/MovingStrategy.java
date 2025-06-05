@@ -1,10 +1,10 @@
 package Strategy;
 
 import Models.Cell;
+import Models.ChessBoard;
+import Models.Game.Move;
 
 public interface MovingStrategy {
 
-    boolean isPathClear(Cell StartCell, Cell EndCell);
-
-    boolean canMove(Cell StartCell, Cell EndCell);
+    boolean canMove(Move move, ChessBoard chessBoard);
 }

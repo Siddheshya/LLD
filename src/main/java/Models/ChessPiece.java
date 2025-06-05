@@ -6,7 +6,6 @@ import java.util.ArrayList;
 
 public abstract class ChessPiece {
 
-    private Cell currentCell;
 
     private boolean isKilled;
 
@@ -16,11 +15,16 @@ public abstract class ChessPiece {
 
     private ArrayList<MovingStrategy> ways;
 
-    public ChessPiece(Color color,Cell currentCell,Name name) {
+    private String pieceSymbol;
+
+    private boolean isMovingFirstTime;
+
+    public ChessPiece(Color color,Name name) {
         this.color = color;
-        this.currentCell = currentCell;
         this.isKilled = false;
         this.name = name;
+        this.pieceSymbol = this.getColor().toString().substring(0,1)+name.toString().substring(0,1)+name.toString().substring(name.toString().length()-1);
+        this.isMovingFirstTime = true;
     }
 
 
@@ -28,9 +32,7 @@ public abstract class ChessPiece {
         return color;
     }
 
-    public Cell getCurrentCell() {
-        return currentCell;
-    }
+
 
     public boolean isKilled() {
         return isKilled;
@@ -40,17 +42,20 @@ public abstract class ChessPiece {
         isKilled = true;
     }
 
-    private void setCurrentCell(Cell currentCell) {
-        this.currentCell = currentCell;
-    }
 
     public void setWays(ArrayList<MovingStrategy> ways) {
         this.ways = ways;
     }
 
-    public String getPieceSymbol() {
-        String colorPrefix = this.color == Color.White?"W":"B";
-        return colorPrefix + this.name.toString();
+    protected void setPieceSymbol(String pieceSymbol) {
+        this.pieceSymbol = pieceSymbol;
+    }
+    protected String getPieceSymbol() {
+        return pieceSymbol;
+    }
+
+    public boolean isMovingFirstTime() {
+        return isMovingFirstTime;
     }
 
 }

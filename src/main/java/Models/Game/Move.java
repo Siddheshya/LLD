@@ -12,4 +12,12 @@ public class Move {
         this.startCell = startCell;
         this.endCell = endCell;
     }
+
+    public Cell getStartCell() {
+        return startCell;
+    }
+
+    public Cell getEndCell() {
+        return endCell;
+    }
 }
