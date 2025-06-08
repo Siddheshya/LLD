@@ -33,7 +33,9 @@ public class Cell {
         return pair;
     }
 
-
+    public Optional<Piece> getPiece() {
+        return piece;
+    }
 
 
 }

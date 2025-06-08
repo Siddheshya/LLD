@@ -1,20 +1,19 @@
 package Models;
 
-import Strategy.MovingStrategy;
+import Strategy.HorizontalMovingStrategy;
 import Strategy.PawnDiagonalMovementStrategy;
 import Strategy.PawnVerticalMovementStrategy;
+import Strategy.VerticalMovingStrategy;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Pawn extends ChessPiece implements Piece{
+public class Rook extends ChessPiece implements Piece {
 
-
-
-    public Pawn(Color color,Name name) {
+    public Rook(Color color,Name name) {
         super(color, name);
-        this.ways = Arrays.asList(new PawnDiagonalMovementStrategy(this),new PawnVerticalMovementStrategy(this));
+        this.ways = Arrays.asList(new VerticalMovingStrategy(),new HorizontalMovingStrategy());
     }
+
 
     @Override
     public boolean canMove(Cell start, Cell end) {
@@ -29,10 +28,5 @@ public class Pawn extends ChessPiece implements Piece{
     @Override
     public String getPieceSymbol() {
         return super.getPieceSymbol();
-    }
-
-    @Override
-    public Color getColor() {
-        return super.getColor();
     }
 }

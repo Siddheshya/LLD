@@ -37,7 +37,7 @@ public class PawnVerticalMovementStrategy implements MovingStrategy{
             return !end.hasPiece() && !chessBoard.getBoard().get(startingX+step).get(startingY+step).hasPiece();
         }
 
-        return displacement == step && (!end.hasPiece());
+        return displacement == step && (end.hasPiece() && chessBoard.getBoard().get(endingX+step).get(endingY+step).getPiece().get().getColor()!=pawn.getColor());
 
     }
 

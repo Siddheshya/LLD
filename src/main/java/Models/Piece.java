@@ -7,4 +7,6 @@ public interface Piece {
     boolean makeAMove(Cell start, Cell end);
 
     public String getPieceSymbol();
+
+    public Color getColor();
 }

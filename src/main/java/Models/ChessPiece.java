@@ -3,6 +3,7 @@ package Models;
 import Strategy.MovingStrategy;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public abstract class ChessPiece {
 
@@ -13,7 +14,7 @@ public abstract class ChessPiece {
 
     private final Color color;
 
-    private ArrayList<MovingStrategy> ways;
+    protected List<MovingStrategy> ways;
 
     private String pieceSymbol;
 
@@ -26,6 +27,7 @@ public abstract class ChessPiece {
         this.pieceSymbol = this.getColor().toString().substring(0,1)+name.toString().substring(0,1)+name.toString().substring(name.toString().length()-1);
         this.isMovingFirstTime = true;
     }
+
 
 
     public Color getColor() {

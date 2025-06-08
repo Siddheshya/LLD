@@ -1,4 +1,11 @@
 package Strategy;
 
-public class DiagonalMovingStrategy {
+import Models.ChessBoard;
+import Models.Game.Move;
+
+public class DiagonalMovingStrategy implements MovingStrategy{
+    @Override
+    public boolean canMove(Move move, ChessBoard chessBoard) {
+        return false;
+    }
 }
